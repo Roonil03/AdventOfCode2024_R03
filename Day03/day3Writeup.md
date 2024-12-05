@@ -1,7 +1,7 @@
 # Day 3 Writeup
 ## Languages Used: `C`
 ## Part 1:
-This problem required simple string matching and previous to the previous problem, it required us to be converting the string input into numbers.<br>
+This problem required simple string matching and similar to the previous problem, it required us to be converting the string input into numbers.<br>
 In the first instance of the problem, I attempted to brute force it and find and see if it was possible to just complete the entire thing just using <i>if-else</i> nested.
 
 That in turn allowed me to make this abomination:
