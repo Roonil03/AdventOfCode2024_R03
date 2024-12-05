@@ -71,11 +71,45 @@ int middle(int* arr, int size)
     return arr[(size+1)/2 - 1];
 }
 
-int checkOrder(Node* head, char* str)
+void swap(int* a, int* b)
 {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    return;
+}
+
+int correctOrder(Node* head, int* arr, int size) {
     HashSet h1 = {0};
     memset(h1.hash, 0, sizeof(h1.hash));
-    //Node* n;
+    for (int i = 0; i < size; i++) {
+        for (int k = 0; k < size; k++) {
+            if (i == k) 
+                continue;
+            Node* temp = head;
+            while (temp) {
+                if (temp->n1 == arr[k] && temp->n2 == arr[i]) {
+                    if (h1.hash[arr[k]]) 
+                        break;
+                    else 
+                        swap(&arr[k], &arr[i]);
+                        printArray(arr, size);
+                        return correctOrder(head, arr, size);
+                }
+                else if(temp->n1 == arr[i] && temp->n2 == arr[k])
+                {
+                    h1.hash[arr[i]] = 1;
+                }
+                temp = temp->next;
+            }
+        }        
+    }
+    return middle(arr,size);
+}
+
+int checkOrder(Node* head, char* str) {
+    HashSet h1 = {0};
+    memset(h1.hash, 0, sizeof(h1.hash));
     int i = 0,j=0, len = strlen(str);
     while(i<len)
     {
@@ -87,55 +121,18 @@ int checkOrder(Node* head, char* str)
         h1.arr[j++] = num;
         i++;
     }
-    printArray(h1.arr, j);
-    // i = 0;
-    // while(i<j)
-    // {
-    //     n = head;
-    //     int s = 0;
-    //     while(s<j)
-    //     {
-    //         if(s == i){
-    //             s++;
-    //             continue;
-    //         }
-    //         while(n != NULL)
-    //         {
-    //             if(n->n1 == h1.arr[s] && n->n2 == h1.arr[i])
-    //             {
-    //                 if((h1.hash[h1.arr[s]]))
-    //                 {
-    //                     break;
-    //                 }
-    //                 else{
-    //                     return 0;
-    //                 }
-    //             }
-    //             else if(n->n1 == h1.arr[i] && n->n2 == h1.arr[s])
-    //             {
-    //                 h1.hash[h1.arr[i]] = 1;
-    //                 break;
-    //             }
-    //             n = n->next;
-    //         }
-    //         if(n == NULL)
-    //         {
-    //             return 0;
-    //         }
-    //     }
-    //     i++;
-    // }
+    //printArray(h1.arr, j);
     for (int i = 0; i < j; i++) {
-        for (int k = 0; k < j; k++) {
-            if (i == k) 
-                continue;
-            Node* temp = head;
-            while (temp) {
-                if (temp->n1 == h1.arr[k] && temp->n2 == h1.arr[i]) {
-                    if (h1.hash[h1.arr[k]]) 
-                        break;
-                    else 
-                        return 0;
+    for (int k = 0; k < j; k++) {
+        if (i == k) 
+            continue;
+        Node* temp = head;
+        while (temp) {
+            if (temp->n1 == h1.arr[k] && temp->n2 == h1.arr[i]) {
+                if (h1.hash[h1.arr[k]]) 
+                    break;
+                else 
+                    return correctOrder(head,h1.arr,j);
                 }
                 else if(temp->n1 == h1.arr[i] && temp->n2 == h1.arr[k])
                 {
@@ -144,9 +141,8 @@ int checkOrder(Node* head, char* str)
                 temp = temp->next;
             }
         }
-        //h1.hash[h1.arr[i]] = 1;
     }
-    return middle(h1.arr,j);
+    return 0;
 }
 
 int main()
