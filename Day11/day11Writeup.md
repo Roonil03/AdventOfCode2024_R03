@@ -110,7 +110,7 @@ Thus, began my process to convert the entire program into C to try and see if th
 The brute force approach that was originally using in first part was clearly not working even with `C`....<br>
 So, I opted to check out something that was different.
 
-I finally went to the subreddit to help guide me into the right direction, and the first <a href="https://www.reddit.com/r/adventofcode/comments/1hbmu6q/2024_day_11_we_knew_it_would_happen/">post over there</a> was talking about this exact thing.
+I finally went to the subreddit to help guide me into the right direction, and the first <a href="https://www.reddit.com/r/adventofcode/comments/1hbmu6q/2024_day_11_we_knew_it_would_happen/">post over there</a> was talking about this exact thing.<br>
 ![s18092412112024](https://a.okmd.dev/md/675987ffdfa33.png)
 
 Luckily some of the comments were very nice in providing directions from which I could easily find the solution.
