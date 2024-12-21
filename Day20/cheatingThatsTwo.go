@@ -50,9 +50,9 @@ func main() {
 	defer f.Close()
 	grid := make(map[Point]rune)
 	var start Point
-	scanner := bufio.NewScanner(f)
-	for y := 0; scanner.Scan(); y++ {
-		line := scanner.Text()
+	sc := bufio.NewScanner(f)
+	for y := 0; sc.Scan(); y++ {
+		line := sc.Text()
 		for x, char := range line {
 			if char != '#' {
 				pos := Point(complex(float64(x), float64(y)))
@@ -63,7 +63,7 @@ func main() {
 			}
 		}
 	}
-	if err := scanner.Err(); err != nil {
+	if err := sc.Err(); err != nil {
 		fmt.Println("Error reading file:", err)
 		return
 	}
