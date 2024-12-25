@@ -1,4 +1,5 @@
 # Day 24 Writeup:
+## Languages Used: 'Go'
 ## Part 1:
 ``In the words of OpenAI's ChatGPT talking from a first person's perspective:``
 <i>In the above Go program, I parse input from a file to evaluate bitwise expressions involving variables. The parseInput function reads lines, categorizing them into either variable-value pairs or expressions with operations like "`AND`", "`OR`", and "`XOR`". I store these in two maps: one for direct values and the other for expressions. The evaluate function recursively computes the result of an expression, resolving each variable until it reaches a base value. The program then identifies variables starting with '`z`' and sorts them, as shown in this snippet:
