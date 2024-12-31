@@ -33,6 +33,6 @@ After that, it was just the advent calendar lighting up and the conclusion to th
 
 Thus, with all 50 stars collected...<br>
 I can finally state this:
-```
-> I conlude the `Advent of Code 2024`!
-```
+
+    > I conlude the `Advent of Code 2024`!
+
