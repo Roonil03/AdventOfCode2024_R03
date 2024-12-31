@@ -20,7 +20,7 @@ def classifyGrids(grids, rawGrids):
     print("Locks:", locks)  
     print("Keys:", keys)   
     return locks, keys
-    ```
+```
 
 After that, it was just simple permutation and combination to check and see which all fit in which others.
 
