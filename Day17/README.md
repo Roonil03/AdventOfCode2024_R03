@@ -48,7 +48,7 @@ Here are some examples of instruction operation:
 
 The Historians' strange device has finished initializing its debugger and is displaying some information about the program it is trying to run (your puzzle input). <br>
 <b>For example:</b>
-````
+```
 Register A: 729
 Register B: 0
 Register C: 0
